@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Movies" %>
+
+<h1>Movies</h1>
+<%= link_to "New movie", new_movie_path, class: 'btn btn-suc' %>
+
+<div id="movies">
+  <% @movies.each do |movie| %>
+    <div class="movie-item">
+      <%= render movie %>
+      <div class="movie-actions">
+        <%= link_to "Show this movie", movie, class: 'btn btn-primary' %>
+        <%= link_to "Edit", edit_movie_path(movie), class: 'btn btn-warning' %>
+        <%= link_to "Delete", movie, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

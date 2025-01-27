@@ -1,0 +1,36 @@
+<h1>Lista recenzji</h1>  <%= button_to 'Nowa recenzja', new_review_path, method: :get, class: 'btn btn-success' %>
+
+<div class="table-container">
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Użytkownik</th>
+      <th>Film</th>
+      <th>Treść</th>
+      <th>Ocena</th>
+      <th>Akcje</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.user.name %></td>
+        <td><%= review.movie.title %></td>
+        <td><%= review.content %></td>
+        <td><%= review.rating %></td>
+        <td>
+          <div class="btn-group">
+          <%= button_to 'Pokaż', review, method: :get, class: 'btn btn-primary' %>
+          <%= button_to 'Edytuj', edit_review_path(review), method: :get, class: 'btn btn-warning' %>
+          <%= button_to 'Usuń', review, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: 'btn btn-danger' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+

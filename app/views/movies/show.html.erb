@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movie %>
+
+
+
+<div class="kac">
+  <%= button_to 'Edytuj', edit_movie_path(@movie), method: :get,  class: 'btn btn-secondary'%>
+  <%= button_to 'Powrót',  movies_path, method: :get, class: 'btn btn-secondary' %>
+
+</div>

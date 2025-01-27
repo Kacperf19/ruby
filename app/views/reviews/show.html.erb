@@ -1,0 +1,27 @@
+<div class="review-details">
+  <p>
+    <strong>Użytkownik:</strong>
+    <%= @review.user.name %>
+  </p>
+
+  <p>
+    <strong>Film:</strong>
+    <%= @review.movie.title %>
+  </p>
+
+  <p>
+    <strong>Treść recenzji:</strong>
+    <%= @review.content %>
+  </p>
+
+  <p>
+    <strong>Ocena:</strong>
+    <%= @review.rating %>
+  </p>
+
+</div>
+<div class="kac">
+  <%= button_to 'Edytuj', edit_review_path(@review), method: :get,  class: 'btn btn-secondary'%>
+  <%= button_to 'Powrót', reviews_path, method: :get, class: 'btn btn-secondary' %>
+
+</div>

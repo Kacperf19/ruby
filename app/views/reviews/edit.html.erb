@@ -1,0 +1,14 @@
+<% content_for :title, "Editing review" %>
+
+<h1>Editing review</h1>
+
+<%= render "form", review: @review %>
+
+<br>
+
+
+<div class="kac">
+
+  <%= button_to 'Powrót', reviews_path, method: :get, class: 'btn btn-secondary' %>
+
+</div>

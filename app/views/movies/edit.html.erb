@@ -1,0 +1,14 @@
+<% content_for :title, "Editing movie" %>
+
+<h1>Editing movie</h1>
+
+<%= render "form", movie: @movie %>
+
+<br>
+
+
+<div class="kac">
+
+  <%= button_to 'Powrót', movies_path, method: :get, class: 'btn btn-secondary' %>
+
+</div>
